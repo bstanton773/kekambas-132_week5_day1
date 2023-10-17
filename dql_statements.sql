@@ -275,7 +275,7 @@ LIMIT 5;
 
 -- Putting all of the clauses together
 -- Of all customer who have made less than 20 payments and have a customer_id > 350, display 
--- those who have spent 11-20th most
+-- those who have spent 11-30th most
 SELECT customer_id, COUNT(*), SUM(amount) AS total_spend
 FROM payment
 WHERE customer_id > 350
@@ -283,7 +283,8 @@ GROUP BY customer_id
 HAVING COUNT(*) < 20
 ORDER BY total_spend DESC
 OFFSET 10
-LIMIT 10;
+LIMIT 20;
+
 
 -- SYNTAX ORDER: (SELECT and FROM are the only mandatory)
 
